@@ -5,6 +5,9 @@ pipeline {
             args '-p 4444:3000'
         }
     }
+    environment { 
+        CI = 'true'
+    }
     stages {
         stage('env') {
             steps {
@@ -19,6 +22,13 @@ pipeline {
                 sh 'whoami'
                 sh 'pwd'
                 sh 'npm install'
+            }
+        }
+        stage('Deliver') { 
+            steps {
+                sh './jenkins/scripts/deliver.sh' 
+                input message: 'Finished using the web site? (Click "Proceed" to continue)' 
+                sh './jenkins/scripts/kill.sh' 
             }
         }
     }
