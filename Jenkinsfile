@@ -2,8 +2,8 @@ pipeline {
     agent {
         docker {
             image 'node:6-alpine'            
-            args '--name=node_v1'
-            args '--network=app-net'
+            args '--name node_v1'
+            args '--network app-net'
             args '-p 4444:3000'
         }
     }
