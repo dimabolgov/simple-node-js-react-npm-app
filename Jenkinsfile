@@ -5,6 +5,9 @@ pipeline {
             args '-p 4444:3000'
         }
     }
+    environment {
+        MEMOWIKI_COMMON_CREDS = credentials('memowiki-test-user-pass')
+    }    
     stages {
         stage('env') {
             steps {
