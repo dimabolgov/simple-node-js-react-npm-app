@@ -14,6 +14,7 @@ pipeline {
                 sh 'id'
                 sh 'whoami'
                 sh 'pwd'
+                sh 'printenv'
             }
         }
         stage('Build') {
