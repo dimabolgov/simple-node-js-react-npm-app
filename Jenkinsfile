@@ -4,8 +4,7 @@ pipeline {
             image 'node:6-alpine'            
             args '-p 4444:3000 --name="node_v1"'
             // Error: docker: Error response from daemon: network app-net not found.
-            //args '-p 4444:3000 --name="node_v1" --network="app-net"'
-            sh 'docker network connect app-net node_v1'
+            //args '-p 4444:3000 --name="node_v1" --network="app-net"'            
         }
     }
     environment {
@@ -22,6 +21,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'docker network connect app-net node_v1'
                 sh 'id'
                 sh 'whoami'
                 sh 'pwd'
