@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker network connect app-net node_v1'
+                //sh 'docker network connect app-net node_v1'
                 sh 'id'
                 sh 'whoami'
                 sh 'pwd'
