@@ -5,6 +5,7 @@ pipeline {
             args '-p 4444:3000 --name="node_v1"'
             // Error: docker: Error response from daemon: network app-net not found.
             //args '-p 4444:3000 --name="node_v1" --network="app-net"'
+            sh 'docker network connect app-net node_v1'
         }
     }
     environment {
