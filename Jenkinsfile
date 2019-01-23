@@ -1,11 +1,14 @@
 pipeline {
     agent {
-        docker {
-            image 'node:6-alpine'            
+        dockerfile {
             args '-p 4444:4444 --name="node_v1" --net="vnoveprod_app-net"'
-            // Error: docker: Error response from daemon: network app-net not found.
-            //args '-p 4444:3000 --name="node_v1" --network="app-net"'            
         }
+//        docker {
+//            image 'node:6-alpine'            
+//            args '-p 4444:4444 --name="node_v1" --net="vnoveprod_app-net"'
+//            // Error: docker: Error response from daemon: network app-net not found.
+//            //args '-p 4444:3000 --name="node_v1" --network="app-net"'            
+//        }
     }
     environment {
         MEMOWIKI_COMMON_CREDS = credentials('memowiki-test-user-pass')
