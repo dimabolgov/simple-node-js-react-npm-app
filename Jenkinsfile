@@ -28,7 +28,7 @@ pipeline {
                 sh 'id'
                 sh 'whoami'
                 sh 'pwd'
-                sh 'npm install'
+                //sh 'npm install'
             }
         }
         stage('Deliver') { 
