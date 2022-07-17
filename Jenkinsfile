@@ -1,7 +1,7 @@
 pipeline {
     agent {
         dockerfile {
-            args '-p 4444:4444 --name="node_v1" --net="vnoveprod_app-net"'
+            args '-p 4444:4444 --name="node_v1" --net="app-net"'
         }
 //        docker {
 //            image 'node:6-alpine'            
