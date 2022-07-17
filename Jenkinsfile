@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('env') {
             steps {
-//                 sh 'id'
+                sh 'id'
 //                 sh 'whoami'
 //                 sh 'pwd'
 //                 sh 'printenv'
