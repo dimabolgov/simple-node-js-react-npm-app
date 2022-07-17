@@ -16,19 +16,19 @@ pipeline {
     stages {
         stage('env') {
             steps {
-                sh 'id'
-                sh 'whoami'
-                sh 'pwd'
-                sh 'printenv'
+//                 sh 'id'
+//                 sh 'whoami'
+//                 sh 'pwd'
+//                 sh 'printenv'
             }
         }
         stage('Build') {
             steps {
                 //sh 'docker network connect app-net node_v1'
-                sh 'id'
-                sh 'whoami'
-                sh 'pwd'
-                //sh 'npm install'
+//                 sh 'id'
+//                 sh 'whoami'
+//                 sh 'pwd'
+                sh 'npm install'
             }
         }
         stage('Deliver') { 
